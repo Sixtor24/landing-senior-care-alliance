@@ -1,0 +1,289 @@
+---
+import { Image } from 'astro:assets';
+
+interface AudienceSegment {
+  headline: string;
+  substatement: string;
+}
+
+const description: string =
+  "From Brokers to Carriers and Underwriters, our AI-driven platform delivers real-time risk insights, predictive underwriting, and smarter claims analytics—helping you reduce losses, optimize coverage, and drive profitability across the entire senior care ecosystem.";
+
+// Datos para los distintos segmentos de audiencia
+const audienceSegments: AudienceSegment[] = [
+  {
+    headline: "Empowering Brokers with AI-Driven Analytics ✨",
+    substatement:
+      "Provide your clients with superior coverage options based on real-time risk data and predictive analytics that help you close more deals and reduce policy turnover.",
+  },
+  {
+    headline: "Precision Underwriting for Enhanced Results 📈",
+    substatement:
+      "Leverage our AI models to accurately assess facility risks, customize policies with confidence, and reduce loss ratios while maintaining competitive pricing.",
+  },
+  {
+    headline: "Transforming Carrier Operations through Intelligence 🧠",
+    substatement:
+      "Optimize your senior care portfolio with our comprehensive data insights, predictive claim analytics, and automated risk assessment tools.",
+  },
+];
+
+// Título principal constante
+const mainTitle = "The Future of Senior Care Liability—";
+const highlight = "Powered by AI";
+
+// Chips data
+const chips = [
+  {
+    text: "AI-Powered Risk Scoring",
+    gradient: "from-[#0EA5E9] to-[#0074a2]",
+    icon: "M12 2L2 7l10 5 10-5-10-5z M2 17l10 5 10-5 M2 12l10 5 10-5"
+  },
+  {
+    text: "Claims Forecasting",
+    gradient: "from-[#8B5CF6] to-[#7E69AB]",
+    icon: "M3 3v18h18 M18 12l-6-9-6 9 M6 12l6-2 6 2"
+  },
+  {
+    text: "Smarter Policy Decisions",
+    gradient: "from-[#D946EF] to-[#9b87f5]",
+    icon: "M12 12m-10 0a10 10 0 1 0 20 0a10 10 0 1 0 -20 0 M12 8l4 4-4 4 M8 12h8"
+  }
+];
+---
+
+<section class="bg-gradient-to-r bg-[#D8F4FC] py-12 sm:py-16 md:py-20">
+  <div class="container mx-auto px-4 sm:px-6">
+    <div class="flex flex-col md:flex-row md:space-x-10 items-center">
+      <div class="w-full md:w-1/2 mb-8 md:mb-0">
+        <div class="flex flex-wrap gap-2 sm:gap-4 mb-6 sm:mb-8">
+          {chips.map(chip => (
+            <span
+              class={`chip bg-gradient-to-r rounded-full ${chip.gradient} text-white text-sm sm:text-base font-medium py-1.5 sm:py-2 px-3 sm:px-4 shadow-sm flex items-center`}
+            >
+              <svg
+                class="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 sm:mr-2"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d={chip.icon}></path>
+              </svg>
+              {chip.text}
+            </span>
+          ))}
+        </div>
+        <h1
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black font-bold mb-3 sm:mb-4"
+        >
+          {mainTitle}<span class="text-[#2A669F]">{highlight}</span>
+        </h1>
+
+        <p
+          class="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 max-w-2xl leading-relaxed"
+        >
+          {description}
+        </p>
+
+        <!-- Slider for audience segments -->
+        <div
+          class="slider-container relative overflow-hidden rounded-lg bg-white/40 shadow-sm backdrop-blur-sm mb-8"
+        >
+          <div
+            id="slider-track"
+            class="flex transition-transform duration-500 ease-in-out"
+          >
+            {audienceSegments.map((segment, index) => (
+              <div
+                class="slider-slide min-w-full px-4 sm:px-6 py-6 sm:py-8"
+                data-index={index}
+              >
+                <h3 class="text-xl sm:text-2xl font-semibold text-[#2A669F] mb-2 sm:mb-3 flex items-center gap-2 tracking-tight">
+                  <span class="slide-number flex-shrink-0 flex items-center justify-center h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-[#2A669F]/10 text-[#2A669F] text-xs sm:text-sm">
+                    {index + 1}
+                  </span>
+                  <span class="min-w-0">{segment.headline}</span>
+                </h3>
+                <p class="text-base sm:text-lg text-gray-700 mb-0 max-w-2xl leading-relaxed antialiased font-normal">
+                  {segment.substatement}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div
+            class="slider-controls flex justify-center items-center mt-3 sm:mt-4 px-2 py-2"
+          >
+            <div class="slider-dots flex space-x-2 sm:space-x-3">
+              {audienceSegments.map((_, index) => (
+                <button
+                  class={`slider-dot h-1.5 sm:h-2 w-6 sm:w-10 rounded-full transition-all duration-300 ${index === 0 ? "bg-[#2A669F] w-10 sm:w-16" : "bg-gray-300"}`}
+                  data-index={index}
+                  aria-label={`Switch to segment ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4"
+        >
+          <a
+            href="#analyze"
+            class="bg-[#2A669F] text-white hover:bg-[#1d4e7e] font-medium sm:font-semibold px-5 sm:px-6 py-3 sm:py-4 rounded-full text-center text-sm sm:text-base"
+            >Get Started</a
+          >
+          <a
+            href="#contact"
+            class="bg-transparent border-2 border-[#2A669F] text-[#2A669F] hover:bg-[#2A669F] hover:text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-center text-sm sm:text-base"
+            >Contact Us</a
+          >
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 rounded-xl sm:rounded-2xl bg-white/30">
+        <Image
+          src="/images/map.png"
+          alt="Caring for seniors"
+          width={800}
+          height={600}
+          class="rounded-lg shadow-lg w-full h-auto"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Function to handle slider functionality
+  function setupSlider() {
+    const sliderTrack = document.getElementById("slider-track");
+    const slides = document.querySelectorAll(".slider-slide");
+    const dots = document.querySelectorAll(".slider-dot");
+
+    // Check if elements exist before proceeding
+    if (!sliderTrack) {
+      console.error("Slider elements not found");
+      return;
+    }
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    // Function to update the slider position
+    function goToSlide(index: number): void {
+      // Normalize index (loop back if needed)
+      if (index < 0) index = totalSlides - 1;
+      if (index >= totalSlides) index = 0;
+
+      // Update the transform to slide to the correct position
+      (sliderTrack as HTMLElement).style.transform =
+        `translateX(-${index * 100}%)`;
+
+      // Update active dot
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("bg-[#2A669F]", i === index);
+        dot.classList.toggle("bg-gray-300", i !== index);
+
+        // Handle responsive widths
+        if (i === index) {
+          dot.classList.add("w-10", "sm:w-16");
+          dot.classList.remove("w-6", "sm:w-10");
+        } else {
+          dot.classList.add("w-6", "sm:w-10");
+          dot.classList.remove("w-10", "sm:w-16");
+        }
+      });
+
+      currentIndex = index;
+    }
+
+    // Set up automatic rotation
+    let autoRotation = setInterval(() => {
+      goToSlide(currentIndex + 1);
+    }, 5000);
+
+    // Reset timer when manually changing slides
+    function resetTimer() {
+      clearInterval(autoRotation);
+      autoRotation = setInterval(() => {
+        goToSlide(currentIndex + 1);
+      }, 5000);
+    }
+
+    // Setup click handlers for dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        goToSlide(index);
+        resetTimer();
+      });
+    });
+
+    // Initialize the slider
+    goToSlide(0);
+  }
+
+  // Run the setup when the DOM is loaded
+  document.addEventListener("DOMContentLoaded", setupSlider);
+</script>
+
+<style>
+  .slider-container {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  @media (min-width: 640px) {
+    .slider-container {
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    }
+  }
+
+  .slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slider-slide {
+    min-width: 100%;
+  }
+
+  .slider-slide h3 {
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+    letter-spacing: -0.01em;
+  }
+
+  .slider-slide p {
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+    color: rgba(51, 51, 51, 0.9);
+  }
+
+  .slider-dot {
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .slider-dot:hover {
+    background-color: rgba(42, 102, 159, 0.7);
+  }
+
+  .slider-controls {
+    margin-top: -6px;
+  }
+
+  @media (min-width: 640px) {
+    .slider-controls {
+      margin-top: -8px;
+    }
+  }
+
+  .slide-number {
+    font-weight: 600;
+  }
+</style>
