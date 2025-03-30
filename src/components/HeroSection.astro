@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 interface AudienceSegment {
   headline: string;
@@ -7,90 +7,51 @@ interface AudienceSegment {
 }
 
 const description: string =
-  "From Brokers to Carriers and Underwriters, our AI-driven platform delivers real-time risk insights, predictive underwriting, and smarter claims analytics—helping you reduce losses, optimize coverage, and drive profitability across the entire senior care ecosystem.";
+  "Our AI-driven platform delivers real-time risk insights and predictive analytics for brokers, carriers and underwriters—helping you reduce losses, optimize coverage, and drive profitability across the senior care ecosystem.";
 
 // Datos para los distintos segmentos de audiencia
 const audienceSegments: AudienceSegment[] = [
   {
     headline: "Empowering Brokers with AI-Driven Analytics ✨",
     substatement:
-      "Provide your clients with superior coverage options based on real-time risk data and predictive analytics that help you close more deals and reduce policy turnover.",
+      "Match clients with optimal coverage using real-time risk data and predictive analytics to close more deals and reduce policy turnover.",
   },
   {
     headline: "Precision Underwriting for Enhanced Results 📈",
     substatement:
-      "Leverage our AI models to accurately assess facility risks, customize policies with confidence, and reduce loss ratios while maintaining competitive pricing.",
+      "Accurately assess facility risks, customize policies with confidence, and reduce loss ratios while maintaining competitive pricing.",
   },
   {
     headline: "Transforming Carrier Operations through Intelligence 🧠",
     substatement:
-      "Optimize your senior care portfolio with our comprehensive data insights, predictive claim analytics, and automated risk assessment tools.",
+      "Optimize your senior care portfolio with comprehensive data insights, predictive claim analytics, and automated risk assessment.",
   },
 ];
 
 // Título principal constante
 const mainTitle = "The Future of Senior Care Liability—";
 const highlight = "Powered by AI";
-
-// Chips data
-const chips = [
-  {
-    text: "AI-Powered Risk Scoring",
-    gradient: "from-[#0EA5E9] to-[#0074a2]",
-    icon: "M12 2L2 7l10 5 10-5-10-5z M2 17l10 5 10-5 M2 12l10 5 10-5"
-  },
-  {
-    text: "Claims Forecasting",
-    gradient: "from-[#8B5CF6] to-[#7E69AB]",
-    icon: "M3 3v18h18 M18 12l-6-9-6 9 M6 12l6-2 6 2"
-  },
-  {
-    text: "Smarter Policy Decisions",
-    gradient: "from-[#D946EF] to-[#9b87f5]",
-    icon: "M12 12m-10 0a10 10 0 1 0 20 0a10 10 0 1 0 -20 0 M12 8l4 4-4 4 M8 12h8"
-  }
-];
 ---
 
-<section class="bg-gradient-to-r bg-[#D8F4FC] py-12 sm:py-16 md:py-20">
+<section class="bg-gradient-to-r bg-[#0c285e] pb-6 sm:pb-16 md:pb-20 -mt-1">
   <div class="container mx-auto px-4 sm:px-6">
     <div class="flex flex-col md:flex-row md:space-x-10 items-center">
       <div class="w-full md:w-1/2 mb-8 md:mb-0">
-        <div class="flex flex-wrap gap-2 sm:gap-4 mb-6 sm:mb-8">
-          {chips.map(chip => (
-            <span
-              class={`chip bg-gradient-to-r rounded-full ${chip.gradient} text-white text-sm sm:text-base font-medium py-1.5 sm:py-2 px-3 sm:px-4 shadow-sm flex items-center`}
-            >
-              <svg
-                class="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 sm:mr-2"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d={chip.icon}></path>
-              </svg>
-              {chip.text}
-            </span>
-          ))}
-        </div>
         <h1
-          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black font-bold mb-3 sm:mb-4"
+          class="text-3xl sm:text-4xl md:text-2xl lg:text-6xl text-white font-semibold tracking-wide mb-6 sm:mb-8"
         >
-          {mainTitle}<span class="text-[#2A669F]">{highlight}</span>
+          {mainTitle}<span class="text-[#4A9FFF]">{highlight}</span>
         </h1>
 
         <p
-          class="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 max-w-2xl leading-relaxed"
+          class="text-base sm:text-lg tracking-wider text-gray-200 mb-10 sm:mb-14 max-w-2xl leading-relaxed"
         >
           {description}
         </p>
 
         <!-- Slider for audience segments -->
-        <div
-          class="slider-container relative overflow-hidden rounded-lg bg-white/40 shadow-sm backdrop-blur-sm mb-8"
+        <!-- <div
+          class="slider-container relative overflow-hidden rounded-lg bg-white/20 shadow-sm backdrop-blur-sm mb-8"
         >
           <div
             id="slider-track"
@@ -101,13 +62,13 @@ const chips = [
                 class="slider-slide min-w-full px-4 sm:px-6 py-6 sm:py-8"
                 data-index={index}
               >
-                <h3 class="text-xl sm:text-2xl font-semibold text-[#2A669F] mb-2 sm:mb-3 flex items-center gap-2 tracking-tight">
-                  <span class="slide-number flex-shrink-0 flex items-center justify-center h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-[#2A669F]/10 text-[#2A669F] text-xs sm:text-sm">
+                <h3 class="text-xl sm:text-2xl font-semibold text-[#4A9FFF] mb-2 sm:mb-3 flex items-center gap-2 tracking-tight">
+                  <span class="slide-number flex-shrink-0 flex items-center justify-center h-6 w-6 sm:h-8 sm:w-8 rounded-full bg-[#4A9FFF]/20 text-[#4A9FFF] text-xs sm:text-sm">
                     {index + 1}
                   </span>
                   <span class="min-w-0">{segment.headline}</span>
                 </h3>
-                <p class="text-base sm:text-lg text-gray-700 mb-0 max-w-2xl leading-relaxed antialiased font-normal">
+                <p class="text-base sm:text-lg text-gray-200 mb-0 max-w-2xl leading-relaxed antialiased font-normal">
                   {segment.substatement}
                 </p>
               </div>
@@ -127,27 +88,29 @@ const chips = [
               ))}
             </div>
           </div>
-        </div>
+        </div> -->
 
         <div
           class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4"
         >
-          <a
-            href="#analyze"
-            class="bg-[#2A669F] text-white hover:bg-[#1d4e7e] font-medium sm:font-semibold px-5 sm:px-6 py-3 sm:py-4 rounded-full text-center text-sm sm:text-base"
-            >Get Started</a
-          >
+        <a
+          href="#analyze"
+          class="relative overflow-hidden bg-white text-[#0c285e] border border-[#0c285e] hover:bg-[#0c285e] hover:text-white hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.8)] transition-all duration-300 font-medium sm:font-semibold px-8 sm:px-8 py-3 sm:py-6 rounded-xl sm:rounded-2xl text-center text-sm sm:text-base before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white before:to-transparent before:opacity-0 hover:before:opacity-20 before:transition-opacity before:duration-500"
+        >
+          Register for Advanced Analytics
+        </a>
         </div>
       </div>
-      <div class="w-full md:w-1/2 rounded-xl sm:rounded-2xl bg-white/30">
+      <div class="relative w-full md:w-1/2 rounded-xl sm:rounded-2xl bg-white/30 border-1 border-transparent hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all duration-300">
         <Image
           src="/images/map.png"
           alt="Caring for seniors"
           width={800}
           height={600}
-          class="rounded-lg shadow-lg w-full h-auto"
+          class="rounded-lg w-full h-auto"
         />
       </div>
+           
     </div>
   </div>
 </section>
@@ -229,14 +192,14 @@ const chips = [
   .slider-container {
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.15);
   }
 
   @media (min-width: 640px) {
     .slider-container {
       border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
     }
   }
 
@@ -250,13 +213,13 @@ const chips = [
   }
 
   .slider-slide h3 {
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     letter-spacing: -0.01em;
   }
 
   .slider-slide p {
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
-    color: rgba(51, 51, 51, 0.9);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    color: rgba(236, 236, 236, 0.9);
   }
 
   .slider-dot {
@@ -265,7 +228,7 @@ const chips = [
   }
 
   .slider-dot:hover {
-    background-color: rgba(42, 102, 159, 0.7);
+    background-color: rgba(74, 159, 255, 0.7);
   }
 
   .slider-controls {

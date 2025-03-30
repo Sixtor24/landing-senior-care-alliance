@@ -4,53 +4,16 @@ import { Icon } from 'astro-icon/components';
 
 <nav 
   id="navbar"
-  class="w-full py-2 px-4 md:px-8 lg:px-12 bg-white fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out border-b border-gray-100 shadow-sm"
+  class="w-full  py-2 px-4 md:px-8 lg:px-23 bg-[#0c285e] static top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out text-white"
 >
-  <div class="max-w-[1400px] mx-auto flex justify-between items-center">
+  <div class="max-w-[1400px] mt-10 mx-auto flex justify-between items-center">
     <div class="flex items-center space-x-8">
-      <img src="/images/Senior-care-alliance-logo.svg" alt="SeniorCare Alliance" class="w-16 h-16" />
-      
-      <div class="hidden lg:flex items-center space-x-6">
-        <div class="navbar-link-dropdown gap-1 flex items-center">
-          Pricing platform
-          <button>
-            <Icon name="dropdown" />
-          </button>
-        </div>
-        <div class="navbar-link-dropdown gap-1 flex items-center">
-          Reserving platform
-          <button>
-            <Icon name="dropdown" />
-          </button>
-        </div>
-        <div class="navbar-link-dropdown gap-1 flex items-center">
-          Resources
-          <button>
-            <Icon name="dropdown" />
-          </button>
-        </div>
-        <div class="navbar-link-dropdown gap-1 flex items-center">
-          FAQ´s
-          <button>
-            <Icon name="dropdown" />
-          </button>
-        </div>
-      </div>
-    </div>
+      <img src="/images/logo.svg" alt="SeniorCare Alliance" class="w-96 pl-2 h-36" />
     
     <div class="flex items-center space-x-4">
-      <button class="btn-primary bg-[#2A669F] hover:bg-[#1d4e7e] text-white px-4 py-4 rounded-full">
-        Book a free demo
-      </button>
-      <div class="hidden lg:flex items-center border border-gray-200 rounded-md px-2 py-1">
-        <span class="font-light">EN</span>
-        <button>
-            <Icon name="dropdown" />
-        </button>
-      </div>
 
       <div class="lg:hidden">
-        <button id="menu-button" class="focus:outline-none">
+        <button id="menu-button" class="focus:outline-none text-white">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -61,7 +24,7 @@ import { Icon } from 'astro-icon/components';
     </div>
   </div>
 
-  <div id="mobile-menu" class="hidden lg:hidden p-4 bg-white shadow-lg">
+  <div id="mobile-menu" class="hidden lg:hidden p-4 bg-[#0c285e] shadow-lg text-white">
     <div class="flex flex-col space-y-4">
       <div class="flex items-center justify-between">
         <div>Pricing platform</div>
@@ -87,7 +50,7 @@ import { Icon } from 'astro-icon/components';
           <path d="M6 9l6 6 6-6"/>
         </svg>
       </div>
-      <div class="flex items-center justify-between border-t pt-4 mt-2">
+      <div class="flex items-center justify-between border-t border-white/20 pt-4 mt-2">
         <div>Language</div>
         <div class="flex items-center">
           <span class="font-medium">EN</span>
@@ -101,21 +64,6 @@ import { Icon } from 'astro-icon/components';
 </nav>
 
 <script>
-  // Handle navbar scroll effect
-  function handleScroll() {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-      navbar?.classList.remove('border-b', 'border-gray-100', 'shadow-sm');
-      navbar?.classList.add('shadow-md', 'py-3', 'backdrop-blur-sm', 'bg-white/95');
-    } else {
-      navbar?.classList.add('border-b', 'border-gray-100', 'shadow-sm');
-      navbar?.classList.remove('shadow-md', 'py-3', 'backdrop-blur-sm', 'bg-white/95');
-    }
-  }
-
-  // Add scroll event listener
-  window.addEventListener('scroll', handleScroll);
-
   // Toggle mobile menu
   document.getElementById('menu-button')?.addEventListener('click', () => {
     const mobileMenu = document.getElementById('mobile-menu');
@@ -132,6 +80,6 @@ import { Icon } from 'astro-icon/components';
   }
   
   .navbar-link-dropdown:hover {
-    color: #3b82f6; /* blue-500 */
+    color: #4A9FFF; /* Updated hover color for better visibility on dark background */
   }
 </style> 
