@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section class="bg-white py-8 overflow-hidden">
+  <div class="container mx-auto px-4">
+    <div class="text-center my-12">
+      <h3 class="text-[#0c285e] text-5xl font-semibold">Trusted by Insurance Leaders</h3>
+    </div>
+    
+    <div class="relative">
+      <!-- Logo static display -->
+      <div class="flex items-center justify-center">
+        <div class="partners-grid flex flex-wrap items-center justify-center gap-10 lg:gap-16">
+          <div class="w-40 lg:w-48 h-24 flex items-center justify-center">
+            <Image src="/images/Nationwide.svg" width={300} height={400} alt="Nationwide Insurance" class="h-16 lg:h-20 object-contain" />
+          </div>
+          <div class="w-40 lg:w-48 h-24 flex items-center justify-center">
+            <Image src="/images/chubb-logo.svg" width={300} height={300} alt="Chubb Insurance" class="h-16 lg:h-20 object-contain" />
+          </div>
+          <div class="w-40 lg:w-48 h-24 flex items-center justify-center">
+            <Image src="/images/liberty-mutual.svg" width={300} height={300} alt="Liberty Express Insurance" class="h-16 lg:h-20 object-contain" />
+          </div>
+          <div class="w-40 lg:w-48 h-24 flex items-center justify-center">
+            <Image src="/images/AIG.svg" width={300} height={300} alt="AIG Insurance" class="h-16 lg:h-20 object-contain" />
+          </div>
+          <div class="w-40 lg:w-48 h-24 flex items-center justify-center">
+            <Image src="/images/medpro-logo.svg" width={300} height={300} alt="MedPro Insurance" class="h-16 lg:h-20 object-contain" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+          class="flex justify-center mt-12 items-center flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4"
+        >
+        <a
+          href="#analyze"
+          class="relative overflow-hidden bg-white text-[#0c285e] border border-[#0c285e] hover:bg-[#0c285e] hover:text-white hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.8)] transition-all duration-300 font-medium sm:font-semibold px-8 sm:px-8 py-3 sm:py-6 rounded-xl sm:rounded-2xl text-center text-sm sm:text-base before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white before:to-transparent before:opacity-0 hover:before:opacity-20 before:transition-opacity before:duration-500"
+        >
+        Or decide if you want to be one
+        of our 8 Development Partners
+        </a>
+        </div>
+  </div>
+</section>
+
+<style>
+  /* For smooth hover effects */
+  .partners-grid > div {
+    transition: transform 0.3s ease;
+  }
+  
+  .partners-grid > div:hover {
+    transform: scale(1.05);
+  }
+</style> 
