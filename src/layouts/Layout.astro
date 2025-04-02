@@ -5,7 +5,7 @@ import '../styles/global.css';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" style="height: 100vh; overflow: hidden;">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -14,23 +14,16 @@ import '../styles/global.css';
 		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 		<title>Senior Care Alliance</title>
 	</head>
-	<body>
+	<body style="height: 100vh; overflow-y: auto; overflow-x: hidden; display: flex; flex-direction: column; margin: 0;">
 		<Navbar />
-		<slot />
+		<main style="flex: 1 0 auto;">
+			<slot />
+		</main>
 		<Footer />
 	</body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-		font-family: 'Lato', sans-serif;
-		overflow-x: hidden;
-	}
-	
 	:global(h1), :global(h2), :global(h3), :global(h4), :global(h5), :global(h6), 
 	:global(p), :global(a), :global(span), :global(div) {
 		font-family: 'Lato', sans-serif;

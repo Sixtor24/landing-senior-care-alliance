@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
 import HeroSection from '../components/HeroSection.astro';
 import AnalyzeSection from '../components/AnalyzeSection.astro';
 import RatesSection from '../components/RatesSection.astro';
@@ -14,14 +13,10 @@ import Footer from '../components/Footer.astro';
 ---
 
 <Layout>
-	<div class="flex flex-col min-h-screen">
-		<main class="flex-grow">
-			<HeroSection />
-			<PartnersSlider />
-			<AnalyzeSection />
-			<!-- <RatesSection /> -->
-			<!-- <DocumentSection /> -->
-			<TestimonialsSection />
-		</main>
-	</div>
+	<HeroSection />
+	<PartnersSlider />
+	<AnalyzeSection />
+	<!-- <RatesSection /> -->
+	<!-- <DocumentSection /> -->
+	<TestimonialsSection />
 </Layout>
